@@ -1,0 +1,7 @@
+﻿  SeqList.c
+D:\data-structure\SeqList\SeqList\SeqList.c(10,1): warning C4047: “初始化”:“SLDataType *”与“SLDataType”的间接级别不同
+  Test.c
+D:\data-structure\SeqList\SeqList\Test.c(44,22): warning C4020: “SeqListPopBack”: 实参太多
+D:\data-structure\SeqList\SeqList\Test.c(45,22): warning C4020: “SeqListPopBack”: 实参太多
+  正在生成代码...
+  SeqList.vcxproj -> D:\data-structure\SeqList\Debug\SeqList.exe
