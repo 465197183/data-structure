@@ -68,15 +68,54 @@ void TestSeqList1()
 	
 	SeqListDestory(&sl);
 }
-void menu()
-{
-	printf("***************************************");
-	printf("*             请选择你的操作           *");
-	printf("*             1.头插                               *");
-	printf("*             2.头删                          *");
-	printf("*                                     *");
-	printf("***************************************");
-}
+
+//void menu_shape()
+//{
+//	printf("***************************************");
+//	printf("*         请选择你的操作               *");
+//	printf("*             1.头插                  *");
+//	printf("*             2.头删                  *");
+//	printf("*             3.尾插                  *");
+//	printf("*             4.尾删                  *");
+//	printf("*             5.查找                  *");
+//	printf("*             6.打印                  *");
+//	printf("*            -1.退出                  *");
+//	printf("***************************************");
+//}
+
+//void menu()
+//{
+//	SL sl;
+//	SeqListInit(&sl);
+//	int input = 0;
+//	while (input != -1)
+//	{
+//		menu_shape();
+//		scanf("%d", &input);
+//		switch (input)
+//		{
+//		case 1:
+//			printf("请输入要插入的数据，以-1结束：")；
+//				scanf("%d", &x);
+//			break;
+//		case 2:
+//			break;
+//		case 3:
+//			break;
+//		case 4:
+//			break;
+//		case 5:
+//			break;
+//		case -1:
+//			break;
+//		default:
+//			break;
+//		}
+//	}
+//	SeqListDestory(&sl);
+//
+//}
+
 
 int main()
 {

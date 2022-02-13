@@ -39,7 +39,7 @@ void SeqListDestory(SL* ps)
 void SeqListInit(SL* ps)
 {
 	ps->a = NULL;
-	ps->size = ps->capacity = 0;
+	ps->size = ps->capacity=0;
 }
 
 //1.整个顺序表没有空间
