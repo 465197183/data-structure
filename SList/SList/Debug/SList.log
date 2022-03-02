@@ -1,5 +1,2 @@
-﻿  SList.c
-D:\data-structure\SList\SList\SList.c(18,1): warning C4047: “初始化”:“SLTNode *”与“SLTDateType”的间接级别不同
-  Test.c
-  正在生成代码...
+﻿  Test.c
   SList.vcxproj -> D:\data-structure\SList\Debug\SList.exe
