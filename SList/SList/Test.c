@@ -25,6 +25,8 @@ void TestList1()
 		SListInsert(&plist, pos, 30);
 	}
 	SListPrint(plist);
+	SListDestory(&plist);
+
 }
 
 

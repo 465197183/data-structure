@@ -22,6 +22,7 @@ SLTNode* SListFind(SLTNode* phead, SLTDateType x);
 //在pos位置之前插入一个结点，用SListFind求pos
 void SListInsert(SLTNode** phead, SLTNode* pos, SLTDateType x);
 //在pos位置之后插入
-void SListInsertAfter(SLTNode** pos, SLTDateType x);
+void SListInsertAfter(SLTNode* pos, SLTDateType x);
 void SListErase(SLTNode** pphead, SLTNode* pos);
+void SListEraseAfter(SLTNode* pos);//删除pos位置的下一个位置
 void SListDestory(SLTNode** pphead);

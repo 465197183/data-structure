@@ -100,6 +100,7 @@ SLTNode* SListFind(SLTNode* phead, SLTDateType x)
 }
 void SListInsert(SLTNode** pphead, SLTNode* pos, SLTDateType x)
 {
+	assert(pos);
 	SLTNode* newnode = CreateListNode(x);
 	if (*pphead == pos)
 	{
@@ -116,4 +117,52 @@ void SListInsert(SLTNode** pphead, SLTNode* pos, SLTDateType x)
 		posPrev->next = newnode;
 		newnode->next = pos;
 	}
+}
+void SListInsertAfter(SLTNode* pos, SLTDateType x)
+{
+	assert(pos);
+	SLTNode* newnode = CreateListNode(x);
+	newnode->next = pos->next;
+	pos->next = newnode;
+}
+
+void SListErase(SLTNode** pphead, SLTNode* pos)
+{
+	assert(*pphead);
+	if (*pphead == pos)
+	{
+		*pphead = pos->next;
+		free(pos);
+	}
+	else
+	{
+		SLTNode* prev = *pphead;
+		while (prev->next!=pos)
+		{
+			prev = prev->next;
+		}
+		prev->next = pos->next;
+		free(pos);
+	}
+}
+
+void SListEraseAfter(SLTNode* pos)
+{
+	assert(pos->next);//βɾ
+	SLTNode* next = pos->next;
+	pos->next = next->next;
+	free(pos);
+}
+
+void SListDestory(SLTNode** pphead)
+{
+	assert(*pphead);
+	SLTNode* cur = *pphead;
+	while (cur)
+	{
+		SLTNode* tmp = cur;
+		cur = cur->next;
+		free(tmp);
+	}
+	*pphead = NULL;
 }
