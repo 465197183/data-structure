@@ -3,6 +3,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
+#include<stdbool.h>
 
 typedef int HeapDataType;
 
@@ -19,3 +20,6 @@ void HeapPush(HP* hp, HeapDataType x);
 void HeapPop(HP* hp);
 void AdjustUp(int* a, int n, int child);
 void HeapPrint(HP* hp);
+bool HeapEmpty(HP* hp);
+int HeapSize(HP* hp);
+void Swap(HeapDataType* px, HeapDataType* py);

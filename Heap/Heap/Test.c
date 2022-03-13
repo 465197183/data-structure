@@ -2,7 +2,7 @@
 
 int main()
 {
-	int a[] = { 70,56,30,25,15,10,75 };
+	int a[] = {15,18,19,25,28,34,65,49,27,37,10 };
 	HP hp;
 	HeapInit(&hp);
 	for (int i = 0; i < sizeof(a) / sizeof(a[0]); i++)
