@@ -1,5 +1,2 @@
-﻿  Heap.c
-D:\data-structure\Heap\Heap\Heap.c(32,1): warning C4029: 声明的形参表不同于定义
-  Test.c
-  正在生成代码...
+﻿  Test.c
   Heap.vcxproj -> D:\data-structure\Heap\x64\Debug\Heap.exe
