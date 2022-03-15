@@ -19,7 +19,7 @@ void HeapDestroy(HP* hp);
 void HeapPush(HP* hp, HeapDataType x);
 void HeapPop(HP* hp);
 void AdjustDown(HeapDataType* a, int n, int parent);
-void AdjustUp(int* a, int n, int child);
+void AdjustUp(int* a, int child);
 HeapDataType HeapTop(HP* hp);
 void HeapPrint(HP* hp);
 bool HeapEmpty(HP* hp);

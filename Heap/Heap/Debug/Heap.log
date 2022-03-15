@@ -1,4 +1,2 @@
 ﻿  Test.c
-D:\data-structure\Heap\Heap\Test.c(33,12): warning C4013: “time”未定义；假设外部返回 int
-D:\data-structure\Heap\Heap\Test.c(34,23): warning C4018: “<”: 有符号/无符号不匹配
   Heap.vcxproj -> D:\data-structure\Heap\Debug\Heap.exe
