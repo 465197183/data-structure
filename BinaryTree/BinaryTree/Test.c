@@ -41,6 +41,10 @@ int main()
 	int count = 0;
 	//BinaryTreeSize(root, &count);
 	//printf("BinaryTreeSize = %d\n",count);
-	printf("BinaryTreeSize = %d", BinaryTreeSize(root));
+	printf("BinaryTreeSize = %d\n", BinaryTreeSize(root));
+	printf("BinaryTreeLeafSize = %d\n", BinaryTreeLeafSize(root));
+	printf("BinaryTreeLevelKSize = %d\n", BinaryTreeLevelKSize(root, 2));
+	printf("BinaryTreeDepth = %d\n", BinaryTreeDepth(root));
+	printf("BinaryTreeFind = %p\n", BinaryTreeFind(root, 'A'));
 	return 0;
 }

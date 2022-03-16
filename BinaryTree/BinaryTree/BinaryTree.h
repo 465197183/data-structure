@@ -18,6 +18,14 @@ void PreOrder(BTNode* root);
 void InOrder(BTNode* root);
 //后序遍历
 void PostOrder(BTNode* root);
-//求结点个数
+//求节点个数
 //void BinaryTreeSize(BTNode* root, int* count)
 int  BinaryTreeSize(BTNode* root);
+//求叶子节点的个数
+int BinaryTreeLeafSize(BTNode* root);
+//求第K层的节点个数
+int BinaryTreeLevelKSize(BTNode* root,int k);
+//求二叉树的高度(深度)
+int BinaryTreeDepth(BTNode* root);
+//查找二叉树中值为X的节点
+BTNode* BinaryTreeFind(BTNode* root, BTDataType x);
