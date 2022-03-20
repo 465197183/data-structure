@@ -1,5 +1,5 @@
 #include"BinaryTree.h"
-
+#include"Queue.h"
 BTNode* CreateNode(BTDataType x)
 {
 	BTNode* node = (BTNode*)malloc(sizeof(BTNode));
@@ -21,11 +21,15 @@ BTNode* CreatBinaryTree()
 	BTNode* nodeD = CreateNode('D');
 	BTNode* nodeE = CreateNode('E');
 	BTNode* nodeF = CreateNode('F');
+	BTNode* nodeG = CreateNode('G');
+
+
 	nodeA->left = nodeB;
 	nodeA->right = nodeC;
 	nodeB->left = nodeD;
 	nodeC->left = nodeE;
 	nodeC->right = nodeF;
+	nodeB->right = nodeG;
 	return nodeA;
 }
 
@@ -46,5 +50,12 @@ int main()
 	printf("BinaryTreeLevelKSize = %d\n", BinaryTreeLevelKSize(root, 2));
 	printf("BinaryTreeDepth = %d\n", BinaryTreeDepth(root));
 	printf("BinaryTreeFind = %p\n", BinaryTreeFind(root, 'A'));
+
+	BinaryTreeLevelOrder(root);
+	bool ret = BinaryTreeComplete(root);
+	printf("%d", ret);
+
+	BinaryTreeDestroy(root);
+	root = NULL;
 	return 0;
 }

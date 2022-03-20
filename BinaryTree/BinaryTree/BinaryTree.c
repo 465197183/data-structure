@@ -1,4 +1,5 @@
 #include"BinaryTree.h"
+#include"Queue.h"
 
 void PreOrder(BTNode* root)
 {
@@ -102,6 +103,72 @@ BTNode* BinaryTreeFind(BTNode* root, BTDataType x)
 		return rightRet;
 
 	return NULL;
-	
+}
 
+void BinaryTreeLevelOrder(BTNode* root)
+{
+	if (root == NULL)
+		return;
+	Queue q;
+	QueueInit(&q);
+	QueuePush(&q, root);
+	while (!QueueEmpty(&q))
+	{
+		BTNode* front = QueueFront(&q);
+		QueuePop(&q);
+		printf("%c ", front->data);
+		if(front->left)
+			QueuePush(&q,front->left);
+		if(front->right)
+			QueuePush(&q,front->right);
+	}
+	printf("\n");
+	QueueDestroy(&q);
+}
+
+bool BinaryTreeComplete(BTNode* root)
+{
+	Queue q;
+	QueueInit(&q);
+	QueuePush(&q, root);
+	while (!QueueEmpty(&q))
+	{
+		BTNode* front = QueueFront(&q);
+		QueuePop(&q);
+		if (front == NULL)
+		{
+			break;
+		}
+		else
+		{
+			QueuePush(&q, front->left);
+			QueuePush(&q, front->right);
+		}
+	}
+	//遇到空之后，检查剩下的节点
+	//1.剩下的全是空，则为完全二叉树
+	//2.剩下的存在非空，则不是完全二叉树
+	while(!QueueEmpty(&q))
+	{
+		BTNode* front = QueueFront(&q);
+		QueuePop(&q);
+		if (front)
+		{	
+			QueueDestroy(&q);
+			return false;
+		}
+	}
+	QueueDestroy(&q);
+	return true;
+
+}
+
+void BinaryTreeDestroy(BTNode* root)
+{
+	if (root == NULL)
+		return;
+
+	BinaryTreeDestroy(root->left);
+	BinaryTreeDestroy(root->right);
+	free(root);
 }

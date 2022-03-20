@@ -3,6 +3,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
+#include<stdbool.h>
 
 typedef char BTDataType;
 typedef struct BinaryTreeNode
@@ -29,3 +30,9 @@ int BinaryTreeLevelKSize(BTNode* root,int k);
 int BinaryTreeDepth(BTNode* root);
 //查找二叉树中值为X的节点
 BTNode* BinaryTreeFind(BTNode* root, BTDataType x);
+//层序遍历
+void BinaryTreeLevelOrder(BTNode* root);
+//判断是否为完全二叉树
+bool BinaryTreeComplete(BTNode * root);
+//销毁二叉树
+void BinaryTreeDestroy(BTNode* root);
