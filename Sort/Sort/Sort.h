@@ -3,9 +3,18 @@
 
 #include<stdio.h>
 #include<assert.h>
+#include<stdlib.h>
+#include<time.h>
 
 //≤Â»Î≈≈–Ú
-void InsertSort(int* a, int n);
+void InsertSort(int* a, int len);
 
 //œ£∂˚≈≈–Ú
-void ShellSort(int* a, int n);
+void ShellSort(int* a, int len);
+
+//—°‘Ò≈≈–Ú
+void SelectSort(int* a, int len);
+
+//∂—≈≈–Ú
+void AdjustDown(int* a, int n, int parent);
+void HeapSort(int* a, int len);
