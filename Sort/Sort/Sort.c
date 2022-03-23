@@ -128,5 +128,17 @@ void AdjustDown(int* a, int n, int parent)
 
 void HeapSort(int* a, int len)
 {
-
+	//½¨¶ÑO(N)
+	for (int i = (len - 1 - 1 / 2); i >= 0; i--)
+	{
+		AdjustDown(a, len, i);
+	}
+	//O(N¡ÁlogN)
+	int end = len - 1;
+	while (end > 0)
+	{
+		Swap(&a[0], &a[end]);
+		AdjustDown(a, end - 1, 0);
+		end--;
+	}
 }
