@@ -18,3 +18,12 @@ void SelectSort(int* a, int len);
 //堆排序
 void AdjustDown(int* a, int n, int parent);
 void HeapSort(int* a, int len);
+
+//冒泡排序
+void BubbleSort(int* a, int len);
+
+//快速排序
+int GetMidIndex(int* a, int left, int right);//三数取中
+int Partion(int* a, int left, int right);
+void QuickSort(int* a, int left, int right);
+

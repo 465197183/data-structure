@@ -142,3 +142,78 @@ void HeapSort(int* a, int len)
 		end--;
 	}
 }
+
+void BubbleSort(int* a, int len)
+{
+	for (int j = 0; j < len-1; j++)
+	{
+		int flag = 0;
+		for (int i = 0; i < len - 1 - j; i++)
+		{
+			if (a[i] > a[i + 1])
+			{
+				Swap(&a[i], &a[i + 1]);
+				flag = 1;
+			}
+		}
+		if (flag == 0) 
+			break;
+	}
+}
+
+int GetMidIndex(int* a, int left, int right)
+{
+	//int mid = (left + right) / 2;
+	int mid = left + ((right - left) >> 1);//写法都可以
+	if (a[left] < a[mid])
+	{
+		if (a[mid] < a[right])
+			return mid;
+		else if (a[left] > a[right])
+			return left;
+		else
+			return right;
+	}
+	else
+	{
+		if (a[mid] > a[right])
+			return mid;
+		else if (a[left] < a[right])
+			return left;
+		else
+			return right;
+	}
+}
+
+int Partion(int* a, int left, int right)
+{
+	//三数取中
+	int min = GetMidIndex(a, left, right);
+	Swap(&a[min], &a[left]);
+	int keyi = left;
+	while (left < right)
+	{
+		//右边先走，找小于key的
+		while (a[right] >= a[keyi] && left < right)
+		{
+			right--;
+		}
+		//停下来之后，左边走，找大于key的
+		while (a[left] <= a[keyi] && left < right)
+		{
+			left++;
+		}
+		Swap(&a[left], &a[right]);
+	}
+	Swap(&a[keyi], &a[left]);
+	return left;
+}
+void QuickSort(int* a, int left,int right)
+{
+	if (left >= right)
+		return;
+	int keyi = Partion(a, left, right);
+	//[left,keyi-1] keyi [keyi+1,right]
+	QuickSort(a, left, keyi - 1);
+	QuickSort(a, keyi + 1, right);
+}

@@ -1,3 +1,3 @@
 ﻿  Test.c
-D:\data-structure\Sort\Sort\Test.c(36,12): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+D:\data-structure\Sort\Sort\Test.c(66,12): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
   Sort.vcxproj -> D:\data-structure\Sort\x64\Debug\Sort.exe
