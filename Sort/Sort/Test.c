@@ -53,7 +53,7 @@ void TestBubbleSort()
 
 void TestQuickSort()
 {
-	int a[] = { 6,1,7,4,9,3,5,0,8 };
+	int a[] = { 6,2,5,3,9,4,8,5,1,7 };
 	int len = sizeof(a) / sizeof(a[0]);
 	QuickSort(a, 0,len-1);
 	printf("QuickSort:: ");
@@ -131,7 +131,7 @@ int main()
 	//TestSelectSort();
 	//TestHeapSort();
 	//TestBubbleSort();
-	//TestQuickSort();
-	TestOP();
+	TestQuickSort();
+	//TestOP();
 	return 0;
 }

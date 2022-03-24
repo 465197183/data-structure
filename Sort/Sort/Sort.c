@@ -185,7 +185,8 @@ int GetMidIndex(int* a, int left, int right)
 	}
 }
 
-int Partion(int* a, int left, int right)
+//hoare版本
+int Partion1(int* a, int left, int right)
 {
 	//三数取中
 	int min = GetMidIndex(a, left, right);
@@ -208,11 +209,66 @@ int Partion(int* a, int left, int right)
 	Swap(&a[keyi], &a[left]);
 	return left;
 }
+
+//挖坑法
+int Partion2(int* a, int left, int right)
+{
+	int min = GetMidIndex(a, left, right);
+	Swap(&a[min], &a[left]);
+	int key = a[left];
+	int pivot = left;
+	while (left < right)
+	{
+		//右边找小,放到坑里面
+		while (left < right && a[right] >= key)
+		{
+			right--;
+		}
+		a[pivot] = a[right];
+		pivot = right;
+
+
+		//左边找大，放到右边的坑里面
+		while (left < right && a[left] <= key)
+		{
+			left++;
+		}
+		a[pivot] = a[left];
+		pivot = left;
+
+	}
+	a[pivot] = key;
+	return pivot;
+}
+
+int Partion3(int* a, int left, int right)
+{
+	int min = GetMidIndex(a, left, right);
+	Swap(&a[min], &a[left]);
+	int keyi = left;
+	int prev = left;
+	int cur = prev + 1;
+	while (cur <= right)
+	{
+		while (cur <= right && a[cur] >= a[keyi])
+			cur++;
+		if (cur <= right)
+		{
+			Swap(&a[cur], &a[++prev]);
+			cur++;
+		}
+	}
+	Swap(&a[prev], &a[keyi]);
+	return prev;
+}
+
+
+
 void QuickSort(int* a, int left,int right)
 {
 	if (left >= right)
 		return;
-	int keyi = Partion(a, left, right);
+	int keyi = Partion3(a, left, right);
 	//[left,keyi-1] keyi [keyi+1,right]
 	QuickSort(a, left, keyi - 1);
 	QuickSort(a, keyi + 1, right);

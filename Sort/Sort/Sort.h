@@ -24,6 +24,8 @@ void BubbleSort(int* a, int len);
 
 //快速排序
 int GetMidIndex(int* a, int left, int right);//三数取中
-int Partion(int* a, int left, int right);
+int Partion1(int* a, int left, int right);
+int Partion2(int* a, int left, int right);
+int Partion3(int* a, int left, int right);
 void QuickSort(int* a, int left, int right);
 
